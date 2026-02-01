@@ -57,4 +57,8 @@ public class CustomerService {
 
         return  CustomerMapper.toDto(updatedCustomer);
     }
+
+    public void deleteCustomer(UUID id) {
+        customerRepository.deleteById(id);
+    }
 }
