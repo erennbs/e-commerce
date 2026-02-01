@@ -2,6 +2,7 @@ package com.ecommerce.customer.service;
 
 import com.ecommerce.customer.dto.CustomerRequestDto;
 import com.ecommerce.customer.dto.CustomerResponseDto;
+import com.ecommerce.customer.exception.EmailAlreadyExistsException;
 import com.ecommerce.customer.mapper.CustomerMapper;
 import com.ecommerce.customer.model.Customer;
 import com.ecommerce.customer.repository.CustomerRepository;
@@ -25,6 +26,10 @@ public class CustomerService {
     }
 
     public CustomerResponseDto createCustomer(CustomerRequestDto customerRequestDto) {
+        if (customerRepository.existsByEmail(customerRequestDto.getEmail())) {
+            throw new EmailAlreadyExistsException("A patient with this email already exists: "
+                    + customerRequestDto.getEmail());
+        }
         Customer customer = CustomerMapper.toEntity(customerRequestDto);
         customer.setCreatedDate(LocalDate.now());
         Customer newCustomer = customerRepository.save(customer);
