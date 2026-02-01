@@ -8,6 +8,7 @@ import com.ecommerce.customer.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -23,4 +24,11 @@ public class CustomerService {
                 .toList();
     }
 
+    public CustomerResponseDto createCustomer(CustomerRequestDto customerRequestDto) {
+        Customer customer = CustomerMapper.toEntity(customerRequestDto);
+        customer.setCreatedDate(LocalDate.now());
+        Customer newCustomer = customerRepository.save(customer);
+
+        return CustomerMapper.toDto(newCustomer);
+    }
 }
