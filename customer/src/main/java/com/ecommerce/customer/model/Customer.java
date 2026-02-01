@@ -31,8 +31,8 @@ public class Customer {
     @Email()
     private String email;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Address> adress;
+    @NotNull
+    private String address;
 
     @NotNull
     private LocalDate createdDate;

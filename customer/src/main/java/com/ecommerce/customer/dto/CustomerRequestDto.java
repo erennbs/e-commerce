@@ -21,4 +21,7 @@ public class CustomerRequestDto {
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
     private String email;
+
+    @NotBlank(message = "Address is required")
+    private String address;
 }

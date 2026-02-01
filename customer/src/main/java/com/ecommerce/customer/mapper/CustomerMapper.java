@@ -4,9 +4,6 @@ import com.ecommerce.customer.dto.CustomerRequestDto;
 import com.ecommerce.customer.dto.CustomerResponseDto;
 import com.ecommerce.customer.model.Customer;
 
-import java.time.LocalDate;
-import java.util.List;
-
 public class CustomerMapper {
     public static CustomerResponseDto toDto(Customer customer) {
         return CustomerResponseDto.builder()
@@ -14,11 +11,7 @@ public class CustomerMapper {
                 .email(customer.getEmail())
                 .firstName(customer.getFirstName())
                 .lastName(customer.getLastName())
-                .adress(
-                        customer.getAdress() == null
-                        ? List.of()
-                        : customer.getAdress().stream().map(AddressMapper::toDto).toList()
-                )
+                .adress(customer.getAddress())
                 .build();
     }
 
@@ -27,6 +20,7 @@ public class CustomerMapper {
                 .firstName(customerRequestDto.getFirstName())
                 .lastName(customerRequestDto.getLastName())
                 .email(customerRequestDto.getEmail())
+                .address(customerRequestDto.getAddress())
                 .build();
     }
 }

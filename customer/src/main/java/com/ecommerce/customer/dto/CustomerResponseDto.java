@@ -16,5 +16,5 @@ public class CustomerResponseDto {
     private String firstName;
     private String lastName;
     private String email;
-    private List<AddressResponseDto> adress;
+    private String adress;
 }
