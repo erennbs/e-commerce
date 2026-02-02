@@ -24,6 +24,16 @@ public class CustomerController {
         return ResponseEntity.ok(customers);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerResponseDto> getCustomer(@PathVariable UUID id) {
+        return ResponseEntity.ok(customerService.getCustomer(id));
+    }
+
+    @GetMapping("/exists/{id}")
+    public ResponseEntity<Boolean> customerExists(@PathVariable UUID id) {
+        return ResponseEntity.ok(customerService.customerExists(id));
+    }
+
     @PostMapping
     public ResponseEntity<CustomerResponseDto> createCustomer(
             @Valid @RequestBody CustomerRequestDto customerRequestDto) {

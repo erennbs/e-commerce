@@ -27,9 +27,18 @@ public class CustomerService {
                 .toList();
     }
 
+    public CustomerResponseDto getCustomer(UUID id) {
+        return CustomerMapper.toDto(customerRepository.findById(id).orElseThrow(
+                () -> new CustomerNotFoundException("Customer not found with ID: " + id)));
+    }
+
+    public boolean customerExists(UUID id) {
+        return customerRepository.existsById(id);
+    }
+
     public CustomerResponseDto createCustomer(CustomerRequestDto customerRequestDto) {
         if (customerRepository.existsByEmail(customerRequestDto.getEmail())) {
-            throw new EmailAlreadyExistsException("A patient with this email already exists: "
+            throw new EmailAlreadyExistsException("A customer with this email already exists: "
                     + customerRequestDto.getEmail());
         }
         Customer customer = CustomerMapper.toEntity(customerRequestDto);
@@ -44,7 +53,7 @@ public class CustomerService {
                 () -> new CustomerNotFoundException("Customer not found with ID: " + id));
 
         if (customerRepository.existsByEmailAndIdNot(customerRequestDto.getEmail(), id)) {
-            throw new EmailAlreadyExistsException("A patient with this email already exists: "
+            throw new EmailAlreadyExistsException("A customer with this email already exists: "
                     + customerRequestDto.getEmail());
         }
 
