@@ -33,7 +33,7 @@ class CustomerMapperTest {
         assertEquals(customer.getFirstName(), dto.getFirstName());
         assertEquals(customer.getLastName(), dto.getLastName());
         assertEquals(customer.getEmail(), dto.getEmail());
-        assertEquals(customer.getAddress(), dto.getAdress());
+        assertEquals(customer.getAddress(), dto.getAddress());
     }
 
     @Test

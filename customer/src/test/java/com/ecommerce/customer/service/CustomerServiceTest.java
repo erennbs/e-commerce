@@ -60,7 +60,7 @@ class CustomerServiceTest {
                 .firstName("Test")
                 .lastName("User")
                 .email("test@mail.com")
-                .adress("Test Address")
+                .address("Test Address")
                 .build();
     }
 
