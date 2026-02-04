@@ -1,10 +1,6 @@
 spring:
-  h2:
-    console:
-      path: /h2-console
-
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:customerdb
     driver-class-name: org.h2.Driver
     username: erenb
     password: 123456
