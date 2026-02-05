@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductResponseDto {
-    private String id;
+public class ProductPurchaseResponse {
+    private String productId;
     private String name;
-    private String description;
-    private String availableQuantity;
     private String price;
-    private CategoryResponseDto category;
+    private String quantity;
 }
