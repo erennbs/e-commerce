@@ -1,12 +1,13 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:productdb
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5431/product
+    driver-class-name: org.postgresql.Driver
     username: erenb
     password: 123456
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       dll-auto: validate
 
@@ -18,9 +19,6 @@ spring:
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
 
-  sql:
-    init:
-      mode: always
 
 server:
   port: 8050
