@@ -11,6 +11,7 @@ import com.ecommerce.product.model.Product;
 import com.ecommerce.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -42,6 +43,7 @@ public class ProductService {
         return ProductMapper.toDto(productRepository.save(product));
     }
 
+    @Transactional
     public List<ProductPurchaseResponse> purchaseProducts(List<ProductPurchaseRequest> productPurchaseRequest) {
         List<UUID> productIds = productPurchaseRequest.stream()
                 .map(ProductPurchaseRequest::getProductId)
