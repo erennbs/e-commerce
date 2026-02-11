@@ -1,0 +1,3 @@
+### GET request to get all customers
+GET http://localhost:8090/api/v1/customer
+###

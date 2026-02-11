@@ -1,0 +1,12 @@
+### PUT request to update customer
+PUT http://localhost:8090/api/v1/customer/4257fc33-5c44-4216-96b7-dda39864f56f
+Content-Type: application/json
+
+{
+  "firstName": "Eren",
+  "lastName": "Bas",
+  "email": "eren@mail.com",
+  "address": "N Clark Street, The Metro Chicago, IL, Chicago"
+}
+
+###

@@ -1,0 +1,3 @@
+### GET request to check if customer with id exists
+GET http://localhost:8090/api/v1/customer/exists/4257fc33-5c44-4216-96b7-dda39864f56f
+###

@@ -1,0 +1,11 @@
+### POST request to purchase product
+POST http://localhost:8050/api/v1/product/purchase
+Content-Type: application/json
+
+[
+  {
+    "productId": "6207a925-113b-49f0-ae6f-83556f862f81",
+    "quantity": 1
+  }
+]
+###

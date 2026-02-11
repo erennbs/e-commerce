@@ -1,0 +1,12 @@
+### POST request to add product
+POST http://localhost:8050/api/v1/product
+Content-Type: application/json
+
+{
+  "name": "test product",
+  "description": "",
+  "availableQuantity": 100,
+  "price": 1000,
+  "categoryId": "66562662-8f31-421d-9f84-9cabf3115e5e"
+}
+###
