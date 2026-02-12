@@ -1,7 +1,9 @@
 package com.ecommerce.order.service;
 
 import com.ecommerce.order.clients.CustomerClient;
+import com.ecommerce.order.clients.PaymentClient;
 import com.ecommerce.order.clients.ProductClient;
+import com.ecommerce.order.clients.dtos.PaymentRequest;
 import com.ecommerce.order.dto.OrderLineRequest;
 import com.ecommerce.order.dto.OrderRequest;
 import com.ecommerce.order.dto.OrderResponse;
@@ -29,6 +31,7 @@ public class OrderService {
     private final CustomerClient customerClient;
     private final ProductClient productClient;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
     @Transactional
     public UUID createOrder(OrderRequest request) {
@@ -44,6 +47,16 @@ public class OrderService {
                     null, order.getId(), purchaseRequest.getProductId(), purchaseRequest.getQuantity()
             ));
         }
+
+        paymentClient.requestOrderPayment(
+                PaymentRequest.builder()
+                        .orderId(order.getId())
+                        .orderReference(order.getReference())
+                        .amount(request.getAmount())
+                        .customer(customer)
+                        .paymentMethod(request.getPaymentMethod())
+                        .build()
+        );
 
         orderProducer.sendOrderConfirmation(
                 new OrderConfirmation(
