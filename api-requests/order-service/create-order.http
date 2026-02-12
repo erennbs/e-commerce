@@ -9,8 +9,8 @@ Content-Type: application/json
   "customerId": "4257fc33-5c44-4216-96b7-dda39864f56f",
   "products": [
     {
-      "productId": "6207a925-113b-49f0-ae6f-83556f862f8a",
-      "quantity": 2
+      "productId": "6207a925-113b-49f0-ae6f-83556f862f81",
+      "quantity": 1
     },
     {
       "productId": "73b51748-8a8c-498c-9640-3e5d26a69638",
