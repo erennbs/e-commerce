@@ -11,6 +11,10 @@ spring:
     hibernate:
       dll-auto: validate
 
+  sql:
+    init:
+      mode: always
+
   kafka:
     producer:
       bootstrap-server: localhost:9092
