@@ -1,5 +1,6 @@
 ### POST request to purchase product
-POST http://localhost:8050/api/v1/product/purchase
+#POST http://localhost:8050/api/v1/products/purchase
+POST http://localhost:8222/api/v1/products/purchase
 Content-Type: application/json
 
 [

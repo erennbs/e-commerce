@@ -1,10 +1,12 @@
 ### POST request to create customer
-POST http://localhost:8090/api/v1/customer
+#POST http://localhost:8090/api/v1/customers
+POST http://localhost:8222/api/v1/customers
 Content-Type: application/json
 
 {
   "firstName": "Eren",
   "lastName": "Bas",
+  "email": "eren@mail.com",
   "address": "N Clark Street, The Metro Chicago, IL, Chicago"
 }
 

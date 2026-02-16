@@ -1,4 +1,5 @@
 ### DELETE request to delete product with id
-DELETE http://localhost:8050/api/v1/product/782d44ad-951f-49be-9fda-9299287632fc
+#DELETE http://localhost:8050/api/v1/products/ad84c23f-8e80-4097-9235-a606e24eb68a
+DELETE http://localhost:8222/api/v1/products/ad84c23f-8e80-4097-9235-a606e24eb68a
 
 ###

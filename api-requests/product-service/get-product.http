@@ -1,3 +1,4 @@
 ### GET request to get product by id
-GET http://localhost:8050/api/v1/product/6207a925-113b-49f0-ae6f-83556f862f81
+#GET http://localhost:8050/api/v1/products/6207a925-113b-49f0-ae6f-83556f862f81
+GET http://localhost:8222/api/v1/products/6207a925-113b-49f0-ae6f-83556f862f81
 ###

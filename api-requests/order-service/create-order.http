@@ -1,15 +1,16 @@
 ### POST request to create order
-POST http://localhost:8070/api/v1/orders
+#POST http://localhost:8070/api/v1/orders
+POST http://localhost:8222/api/v1/orders
 Content-Type: application/json
 
 {
-  "reference": "gfkh124şs9oa",
+  "reference": "asf-hksda64j",
   "amount": 1,
   "paymentMethod": "CREDIT_CARD",
   "customerId": "4257fc33-5c44-4216-96b7-dda39864f56f",
   "products": [
     {
-      "productId": "6207a925-113b-49f0-ae6f-83556f862f81",
+      "productId": "b408c195-cfe7-46a7-80f1-4525ca5dda19",
       "quantity": 1
     },
     {

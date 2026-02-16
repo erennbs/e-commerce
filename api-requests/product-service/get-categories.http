@@ -1,3 +1,4 @@
 ### GET request to get all categories
-GET http://localhost:8050/api/v1/category
+#GET http://localhost:8050/api/v1/categories
+GET http://localhost:8222/api/v1/categories
 ###

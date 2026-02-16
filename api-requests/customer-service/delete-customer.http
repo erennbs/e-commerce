@@ -1,3 +1,4 @@
 ### DELETE request to delete customer
-DELETE http://localhost:8090/api/v1/customer/4257fc33-5c44-4216-96b7-dda39864f56f
+#DELETE http://localhost:8090/api/v1/customers/0e53e09e-ce70-4338-a3b3-9adc087037e1
+DELETE http://localhost:8222/api/v1/customers/0e53e09e-ce70-4338-a3b3-9adc087037e1
 ###
