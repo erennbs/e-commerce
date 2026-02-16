@@ -4,7 +4,6 @@ import com.ecommerce.notification.kafka.order.OrderConfirmation;
 import com.ecommerce.notification.kafka.payment.PaymentConfirmation;
 import com.ecommerce.notification.model.Notification;
 import com.ecommerce.notification.model.NotificationType;
-import com.ecommerce.notification.repository.NotificationRepository;
 import com.ecommerce.notification.service.EmailService;
 import com.ecommerce.notification.service.NotificationService;
 import jakarta.mail.MessagingException;

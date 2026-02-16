@@ -7,7 +7,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Document
 @AllArgsConstructor
@@ -17,7 +16,7 @@ import java.util.UUID;
 @Builder
 public class Notification {
     @Id
-    private UUID id;
+    private String id;
 
     private NotificationType type;
 
