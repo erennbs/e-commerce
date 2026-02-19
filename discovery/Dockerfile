@@ -14,6 +14,8 @@ FROM eclipse-temurin:21-jre-alpine AS runner
 
 WORKDIR /app
 
+RUN apk add --no-cache curl
+
 COPY --from=builder ./app/target/discovery-service.jar ./
 
 EXPOSE 8761
