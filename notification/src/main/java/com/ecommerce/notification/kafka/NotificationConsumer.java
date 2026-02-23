@@ -21,7 +21,7 @@ public class NotificationConsumer {
     private final NotificationService notificationService;
     private final EmailService emailService;
 
-    @KafkaListener(topics = "payment-topic")
+    @KafkaListener(topics = "payment-topic", groupId = "payment-group")
     public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
         log.info("Received payment confirmation: {}", paymentConfirmation);
         notificationService.saveNotification(
@@ -39,7 +39,7 @@ public class NotificationConsumer {
         );
     }
 
-    @KafkaListener(topics = "order-topic")
+    @KafkaListener(topics = "order-topic", groupId = "order-group")
     public void consumeOrderConfirmationNotification(OrderConfirmation orderConfirmation) throws MessagingException {
         log.info("Received order confirmation: {}", orderConfirmation);
         notificationService.saveNotification(
