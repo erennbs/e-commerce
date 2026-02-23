@@ -9,11 +9,15 @@ spring:
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
       hibernate:
-        dll-auto: create-drop
+        dll-auto: validate
 
-  sql:
-    init:
-      mode: always
+    flyway:
+      enabled: true
+      baseline-on-migrate: true
+      baseline-description: "init"
+      baseline-version: 0
+      user: ${spring.datasource.username}
+      password: ${spring.datasource.password}
 
 server:
   port: 8090
