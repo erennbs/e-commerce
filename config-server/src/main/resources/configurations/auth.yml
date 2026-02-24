@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5431/user
+    url: jdbc:postgresql://localhost:5431/users
     driver-class-name: org.postgresql.Driver
     username: erenb
     password: 123456
@@ -25,3 +25,6 @@ server:
 logging:
   level:
     root: info
+
+jwt:
+  secret: rH9l8fi1ZCfwEcPAB964cRfLAAH4LM+QTC2TrKLcKrg=
