@@ -20,7 +20,7 @@ spring:
       password: ${spring.datasource.password}
 
 server:
-  port: 8090
+  port: 8030
 
 logging:
   level:
