@@ -1,5 +1,6 @@
 ### Login request to retrieve token
-POST http://localhost:8030/api/v1/auth/login
+#POST http://localhost:8030/api/v1/auth/login
+POST http://localhost:8222/api/v1/auth/login
 Content-Type: application/json
 
 {

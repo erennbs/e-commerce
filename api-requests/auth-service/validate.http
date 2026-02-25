@@ -1,5 +1,6 @@
 ### GET request to validate token
-GET http://localhost:8030/api/v1/auth/validate
+#GET http://localhost:8030/api/v1/auth/validate
+GET http://localhost:8222/api/v1/auth/validate
 Authorization: Bearer {{token}}
 
 ###
