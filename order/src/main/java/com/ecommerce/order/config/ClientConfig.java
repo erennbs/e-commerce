@@ -5,6 +5,7 @@ import com.ecommerce.order.clients.PaymentClient;
 import com.ecommerce.order.clients.ProductClient;
 import com.ecommerce.order.clients.feign.CustomerClientFeign;
 import com.ecommerce.order.clients.feign.PaymentClientFeign;
+import com.ecommerce.order.clients.feign.ProductClientFeign;
 import com.ecommerce.order.clients.rest.ProductClientRest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +19,8 @@ public class ClientConfig {
     }
 
     @Bean
-    ProductClient productClient(RestTemplate restTemplate) {
-        return new ProductClientRest(restTemplate);
+    ProductClient productClient(ProductClientFeign productClientFeign) {
+        return productClientFeign;
     }
 
     @Bean
@@ -27,5 +28,6 @@ public class ClientConfig {
         return customerClientFeign;
     }
 
+    @Bean
     PaymentClient paymentClient(PaymentClientFeign paymentClientFeign) {return paymentClientFeign;}
 }

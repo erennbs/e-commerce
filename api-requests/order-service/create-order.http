@@ -2,6 +2,7 @@
 #POST http://localhost:8070/api/v1/orders
 POST http://localhost:8222/api/v1/orders
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "reference": "asf-hksda64j",
