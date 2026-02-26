@@ -35,7 +35,7 @@ spring:
                 - JwtValidation
 
             - id: auth-service
-              uri: lb://AUTH
+              uri: lb://AUTH-SERVICE
               predicates:
                 - Path=/api/v1/auth/**
 
@@ -44,4 +44,4 @@ server:
 
 application:
   config:
-    auth-url: http://AUTH/api/v1/auth
+    auth-url: http://AUTH-SERVICE/api/v1/auth
