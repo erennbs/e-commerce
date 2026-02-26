@@ -18,4 +18,4 @@ COPY --from=builder ./app/target/auth-service.jar ./
 
 EXPOSE 8030
 
-ENTRYPOINT ["java", "-jar", "customer-service.jar"]
+ENTRYPOINT ["java", "-jar", "auth-service.jar"]
