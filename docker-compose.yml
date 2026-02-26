@@ -168,6 +168,26 @@ services:
       discovery-service:
         condition: service_healthy
 
+  auth-service:
+    container_name: ms-auth-service
+    build: /auth
+    ports:
+      - "8030:8030"
+    environment:
+      #SPRING_PROFILES_ACTIVE: docker
+      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/users
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-service:8761/eureka
+      EUREKA_INSTANCE_HOSTNAME: auth-service
+    networks:
+      - microservices-net
+    depends_on:
+      config-server:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
 
   # --------------------- External services ------------------------------ #
   postgres:
